@@ -10,5 +10,5 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: 24f2001458@ds.study.iitm.ac.in
+      - name: Echo 24f2001458@ds.study.iitm.ac.in
         run: echo "Hello, world!"
