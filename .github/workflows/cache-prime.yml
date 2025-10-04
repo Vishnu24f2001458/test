@@ -1,0 +1,25 @@
+name: Prime Cache FEAD46E
+
+on:
+  workflow_dispatch:    # allows manual run from Actions tab
+  push:                 # also runs on every push
+
+jobs:
+  cache-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Cache Python dependencies
+        id: cache-step
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: cache-fead46e
+          restore-keys: |
+            cache-
+
+      - name: prime-cache-fead46e
+        run: echo "Cache hit? -> ${{ steps.cache-step.outputs.cache-hit }}"
