@@ -1,0 +1,14 @@
+{
+  "name": "ga2-ac02bf",
+  "image": "ghcr.io/devcontainers/features/python:1",
+  "features": {},
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "astral-sh.uv",
+        "ms-python.python"
+      ]
+    }
+  },
+  "postCreateCommand": "pip install fastapi"
+}
