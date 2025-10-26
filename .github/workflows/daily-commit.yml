@@ -13,12 +13,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Configure git user email 24f2001458@ds.study.iitm.ac.in
+      - name: 24f2001458@ds.study.iitm.ac.in
         run: |
           git config --global user.name "GitHub Action Bot"
           git config --global user.email "24f2001458@ds.study.iitm.ac.in"
 
-      - name: Create commit with timestamp 24f2001458@ds.study.iitm.ac.in
+      - name: 24f2001458@ds.study.iitm.ac.in
         run: |
           echo "Last run: $(date -u)" > last-run.txt
           git add last-run.txt
