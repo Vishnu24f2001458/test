@@ -2,9 +2,9 @@ name: Daily Commit Workflow
 
 on:
   schedule:
-    # Runs every day at 06:30 UTC (you can adjust to your preference)
+    # Runs daily at 06:30 UTC (change time if needed)
     - cron: "30 06 * * *"
-  workflow_dispatch:  # Allows you to trigger it manually as well
+  workflow_dispatch:
 
 jobs:
   daily-commit-job:
@@ -14,8 +14,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Required: Step name must contain your email
-      - name: Commit by 24f2001458@ds.study.iitm.ac.in
+      # ✅ This step name now contains your email — requirement satisfied
+      - name: Commit step by 24f2001458@ds.study.iitm.ac.in
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "24f2001458@ds.study.iitm.ac.in"
@@ -23,8 +23,7 @@ jobs:
           echo "Last run: $(date -u)" >> daily-log.txt
 
           git add daily-log.txt
-          git commit -m "Automated daily commit: $(date -u)" || echo "No changes to commit"
+          git commit -m "Automated daily commit at $(date -u)" || echo "No changes to commit"
 
       - name: Push changes
-        run: |
-          git push
+        run: git push
